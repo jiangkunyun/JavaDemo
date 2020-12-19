@@ -1,10 +1,7 @@
 package org.example.mapper;
 
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import org.example.entity.User;
-import org.apache.ibatis.annotations.Select;
 
 import java.util.List;
 
@@ -19,6 +16,8 @@ public interface UserMapper {
 
     // 新增
     @Insert("INSERT INTO `user` ( id, username ) VALUES (#{id},#{username})")
+    //keyProperty java对象的属性；keyColumn表示数据库的字段
+    @Options(useGeneratedKeys=true, keyProperty="id", keyColumn="id")
     void addUser(User user);
 
     // 根据 id 删除
@@ -30,6 +29,6 @@ public interface UserMapper {
     List<User> getAllUser();
 
     //修改
-    @Update("UPDATE `user` SET name = #{name} WHERE id = #{id}")
+    @Update("UPDATE `user` SET username = #{username} WHERE id = #{id}")
     void updateUser(User user);
 }
