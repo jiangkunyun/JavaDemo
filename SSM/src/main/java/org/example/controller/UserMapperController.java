@@ -24,7 +24,7 @@ public class UserMapperController {
      * @return
      */
     @RequestMapping("/getUserById")
-    public String findUserByMapper(Model model) {
+    public String getUserById(Model model) {
         int id = 1;
         User user = this.userService.getUserById(id);
         model.addAttribute("user", user);

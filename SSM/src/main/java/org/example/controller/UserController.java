@@ -5,9 +5,13 @@ import org.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * User 的控制类
@@ -21,14 +25,29 @@ public class UserController {
 
     /**
      * 通过 Mapper 映射文件查询用户信息
+     *
      * @param model
      * @return
      */
-    @RequestMapping("/getUserById")
-    public String findUser(Model model) {
+    @RequestMapping("")
+    public String getUser(Model model) {
         int id = 1;
         User user = this.userService.getUserById(id);
         model.addAttribute("user", user);
         return "index";
+    }
+
+    /**
+     * 获取所有用户信息
+     *
+     * @return
+     */
+    //@RequestMapping(value="/getAllUser",method=RequestMethod.GET)
+    @GetMapping("/getAllUser")
+    /*@ResponseBody注解表示该方法的返回的结果直接写入HTTP响应正文中（ResponseBody）*/
+    /*如果需要返回 自定义对象为JSON数据类型，需要增加jackson依赖*/
+    @ResponseBody
+    public List<User> getAllUser() {
+        return userService.getAllUser();
     }
 }

@@ -1,5 +1,5 @@
 import org.example.entity.User;
-import org.example.mapper.UserMapper;
+import org.example.dao.UserMapper;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
