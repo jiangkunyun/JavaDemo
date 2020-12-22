@@ -5,12 +5,10 @@ import org.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -24,12 +22,34 @@ public class UserController {
     private UserService userService;
 
     /**
+     * 登录页
+     *
+     * @param model
+     * @return
+     */
+    @RequestMapping("/login")
+    public String login(Model model) {
+        return "login";
+    }
+
+    /**
+     * 登录验证
+     * @return
+     */
+    @PostMapping("/chackLogin")
+    @ResponseBody
+    public String chackLogin(String name,String pwd, HttpSession session){
+        session.setAttribute("username",name);
+        return "OK";
+    }
+
+    /**
      * 通过 Mapper 映射文件查询用户信息
      *
      * @param model
      * @return
      */
-    @RequestMapping("")
+    @RequestMapping("/")
     public String getUser(Model model) {
         int id = 1;
         User user = this.userService.getUserById(id);
