@@ -39,7 +39,11 @@
     </bean>
 
     <!-- 对静态资源文件的访问 -->
+    <!--location元素表示webapp目录下的static包下的所有文件；-->
+    <!--mapping元素表示以/static开头的所有请求路径，如/static/a 或者/static/a/b；-->
+    <!--该配置的作用是：DispatcherServlet不会拦截以/static开头的所有请求路径，并当作静态资源交由Servlet处理。-->
     <!--    <mvc:resources mapping="/static/**" location="/static/" />-->
+
     <!--配置拦截器, 多个拦截器,顺序执行 -->
     <mvc:interceptors>
         <mvc:interceptor>
