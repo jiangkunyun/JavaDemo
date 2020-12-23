@@ -12,7 +12,7 @@
     </annotationProcessing>
     <bytecodeTargetLevel target="15">
       <module name="SpringBoot" target="15" />
-      <module name="SSM" target="1.5" />
+      <module name="SSM" target="15" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
