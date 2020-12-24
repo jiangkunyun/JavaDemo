@@ -2,8 +2,6 @@ package org.example.ssm.controller;
 
 import org.example.ssm.entity.User;
 import org.example.ssm.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -24,9 +22,6 @@ public class UserController {
 
     /**
      * 登录页
-     *
-     * @param model
-     * @return
      */
     @RequestMapping("/login")
     public String login(Model model) {
@@ -35,7 +30,6 @@ public class UserController {
 
     /**
      * 登录验证
-     * @return
      */
     @PostMapping("/chackLogin")
     @ResponseBody
@@ -46,9 +40,6 @@ public class UserController {
 
     /**
      * 首页
-     *
-     * @param model
-     * @return
      */
     @RequestMapping("/")
     public String home(Model model) {
@@ -60,8 +51,6 @@ public class UserController {
 
     /**
      * 获取所有用户信息
-     *
-     * @return
      */
     //@RequestMapping(value="/getAllUser",method=RequestMethod.GET)
     @GetMapping("/getAllUser")

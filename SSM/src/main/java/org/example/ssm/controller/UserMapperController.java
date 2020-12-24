@@ -22,8 +22,6 @@ public class UserMapperController {
 
     /**
      * 通过 Mapper 动态代理和注解查询所有用户信息
-     *
-     * @return
      */
     //@RequestMapping(value="/getAllUser",method=RequestMethod.GET)
     @GetMapping("/getAllUser")
