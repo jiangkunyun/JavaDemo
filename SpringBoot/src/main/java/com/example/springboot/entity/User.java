@@ -1,4 +1,4 @@
-package com.example.demo.entity;
+package com.example.springboot.entity;
 
 /**
  * User 实体类

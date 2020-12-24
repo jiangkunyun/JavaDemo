@@ -1,7 +1,7 @@
-package com.example.demo.service;
+package com.example.springboot.service;
 
-import com.example.demo.dao.UserDao;
-import com.example.demo.entity.User;
+import com.example.springboot.dao.UserDao;
+import com.example.springboot.entity.User;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

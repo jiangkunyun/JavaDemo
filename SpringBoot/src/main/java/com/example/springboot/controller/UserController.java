@@ -1,7 +1,7 @@
-package com.example.demo.controller;
+package com.example.springboot.controller;
 
-import com.example.demo.entity.User;
-import com.example.demo.service.UserService;
+import com.example.springboot.entity.User;
+import com.example.springboot.service.UserService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * 测试控制器
  */
-@RestController
+@RestController //@RestController等于@Controller和@ResponseBody
 public class UserController {
 
     @Resource//按byName自动装配
