@@ -1,5 +1,5 @@
-import org.example.dao.UserDao;
-import org.example.entity.User;
+import org.example.ssm.dao.UserDao;
+import org.example.ssm.entity.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

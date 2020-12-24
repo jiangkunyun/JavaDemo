@@ -1,13 +1,14 @@
-package org.example.dao;
+package org.example.ssm.dao;
 
 import org.apache.ibatis.annotations.*;
-import org.example.entity.User;
+import org.example.ssm.entity.User;
 
 import java.util.List;
 
 /**
  *通过注解配置的User
  */
+@Mapper
 public interface UserMapper {
 
     // 根据 id 寻找对应的 User

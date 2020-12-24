@@ -1,6 +1,6 @@
-package org.example.dao;
+package org.example.ssm.dao;
 
-import org.example.entity.User;
+import org.example.ssm.entity.User;
 
 import java.util.List;
 

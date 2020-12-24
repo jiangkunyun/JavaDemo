@@ -1,4 +1,4 @@
-package org.example.entity;
+package org.example.ssm.entity;
 
 /**
  * User 实体类

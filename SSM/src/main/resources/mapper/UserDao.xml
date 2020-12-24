@@ -2,10 +2,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <!-- 设置为IUserDao接口方法提供sql语句配置 -->
-<mapper namespace="org.example.dao.UserDao">
+<mapper namespace="org.example.ssm.dao.UserDao">
 
     <!--parameterType入参类型，resultType出参类型-->
-    <!--有配置<typeAliases>别名为org.example.entity，所以在这里的 resultType 可以直接写 User，而不用写类的全限定名 org.example.entity.User-->
+    <!--有配置<typeAliases>别名为org.example.entity，所以在这里的 resultType 可以直接写 User，而不用写类的全限定名 User-->
     <select id="getUserById" parameterType="int" resultType="User" >
         SELECT id, username FROM `user` WHERE id = #{id}
     </select>

@@ -1,7 +1,7 @@
-package org.example.service;
+package org.example.ssm.service;
 
-import org.example.entity.User;
-import org.example.dao.UserMapper;
+import org.example.ssm.entity.User;
+import org.example.ssm.dao.UserMapper;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

@@ -1,8 +1,9 @@
-package org.example.controller;
+package org.example.ssm.controller;
 
-import org.example.entity.User;
-import org.example.service.UserService;
+import org.example.ssm.entity.User;
+import org.example.ssm.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -18,7 +19,7 @@ import java.util.List;
 @RequestMapping("")
 public class UserController {
 
-    @Resource//按byName自动装配
+    @Resource(name="userService")//按byName自动装配
     private UserService userService;
 
     /**
@@ -39,18 +40,18 @@ public class UserController {
     @PostMapping("/chackLogin")
     @ResponseBody
     public String chackLogin(String name,String pwd, HttpSession session){
-        session.setAttribute("username",name);
+        session.setAttribute("username",name);//在session存入登录信息
         return "OK";
     }
 
     /**
-     * 通过 Mapper 映射文件查询用户信息
+     * 首页
      *
      * @param model
      * @return
      */
     @RequestMapping("/")
-    public String getUser(Model model) {
+    public String home(Model model) {
         int id = 1;
         User user = this.userService.getUserById(id);
         model.addAttribute("user", user);
